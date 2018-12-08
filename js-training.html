@@ -1,0 +1,78 @@
+<html>
+
+<head>
+    <!-- CSSをインポート -->
+    <link rel="stylesheet" href="/css/js-training.css">
+    <!-- JavaScriptをインポート -->
+    <script src="js/js-training.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Javascript Training</h1>
+    </header>
+    <main>
+        <section>
+            <div>勉強に便利なツール</div>
+            <ul>
+                <li>Visual Studio Code<br><a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></li>
+                <li>VS Code Live Server Extension<br><a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <hr>
+            <h2>Javascriptのビルトイン関数のみ</h2>
+            <p>参考: <a href="https://developer.mozilla.org/ja/docs/Web/API/Document/getElementById">https://developer.mozilla.org/ja/docs/Web/API/Document/getElementById</a></p>
+            <div>html</div>
+            <!-- ソースコード -->
+            <pre class="prettyprint"><code>
+            &lt;button onclick=&quot;change_builtin('blue');&quot;&gt;blue&lt;/button&gt;
+            &lt;button onclick=&quot;change_builtin('red');&quot;&gt;red&lt;/button&gt;
+            </code></pre>
+            <div>JavaScript</div>
+            <pre class="prettyprint"><code>
+            function change_builtin(newColor) {
+                var elem = document.getElementById('para');
+                elem.innerText = newColor;
+                elem.style.color = newColor;
+            }
+            </code></pre>
+            <!-- 動くサンプル-->
+            <p id="para" style="font-size:32px">ここを変える</p>
+            <button onclick="change_builtin('blue');" class="blue">blue</button>
+            <button onclick="change_builtin('red');" class="red">red</button>
+        </section>
+
+        <section>
+            <hr>
+            <h2>jQuery</h2>
+            <h3>JQueryとは何か</h3>
+            <ul>
+                <li>JavaScriptのライブラリ</li>
+                <li>DOM操作が簡単にできる</li>
+                <li>Ajaxも簡単にできる</li>
+            </ul>
+            <a href="https://webkikaku.co.jp/blog/webdesign/jquery_start/">https://webkikaku.co.jp/blog/webdesign/jquery_start/</a>
+            <div>html</div>
+            <pre class="prettyprint"><code>
+            // CDNから読み込み
+            <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+            // もしくはローカルにダウンロードして読み込み
+            <script src="js/jquery/jquery-3.2.1.min.js"></script>
+            </code></pre>
+            <div>JavaScript</div>
+            <pre class="prettyprint"><code>
+            </code></pre>
+            <p id="para" style="font-size:32px">ここが変わる</p>
+            <button onclick="change('blue');">blue</button>
+            <button onclick="change('red');">red</button>
+        </section>
+    </main>
+
+    <!-- その他外部JavaScriptライブラリのインポート -->
+    <!-- JavaScriptのインポートはパフォーマンス的な理由でheadタグじゃなくbodyの最後に入れることが多い -->
+    <script type="text/javascript" src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+</body>
+
+</html>
