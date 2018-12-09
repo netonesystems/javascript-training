@@ -1,15 +1,13 @@
-<html>
+<!DOCTYPE html>
+<html lang="ja">
 
 <head>
     <!-- CSSをインポート -->
     <link rel="stylesheet" href="/css/main.css">
     <!-- JavaScriptをインポート -->
-    <script src="js/js-training.js"></script>
+    <script src="js/util.js"></script>
     <!-- jQueryをインポート -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <!-- Bootstrapをインポート -->
-    <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous"> -->
 </head>
 
 <body>
@@ -49,9 +47,15 @@
             <h3>JavaScriptとは何か</h3>
             <ul>
                 <li>プログラミング言語</li>
-                <li>主にブラウザ上で動いてWebの動的なUI作る為に使われる</li>
-                <li>最近はフロントでなくサーバサイドでも使えるフレームワークや実行環境が色々ある(Node.jsなど)</li>
+                <li>主にブラウザ上で動いてWebフロントエンドの動的なUI作る為に使われている</li>
+                <li>最近はフロントだけでなくバックエンドでも使えるフレームワークや実行環境が色々ある<br>Node.js(C++で作られたサーバサイドのJavaScript実行環境)など</li>
             </ul>
+            <h3>ECMAScriptとは何か</h3>
+            <ul>
+                <li>JavaScriptの標準（言語仕様）</li>
+                <li>つまりJavaScript実行エンジンは標準のECMAScriptという仕様に準拠して作りましょうということです。</li>
+            </ul>
+
             <h3>特徴</h3>
             <ul>
                 <li>インタプリタ型言語</li>
@@ -66,7 +70,7 @@
                 <p>代入される値で変数の型が決まる</p>
                 <p>これもPythonと一緒<br>書くときに型を意識せずにかけて楽だけど、代入時にはエラーにならないのでバグを見落としがち</p>
                 <p>特に関数の引数とか戻り値とかはどの型を期待しているか気をつける。</p>
-                <pre class="prettyprint"><code>
+                <pre class="prettyprint linenums"><code>
 // 数値型
 var num = 1;
 typeof num; // "number"
@@ -119,7 +123,7 @@ typeof obj; // "object"
             <ul>
                 <li>ライブラリやフレームワークが色々やりすぎ</li>
                 <div>ライブラリを知らないとソース読むことすら不可（黒魔術的）</div>
-                <pre class="prettyprint"><code>
+                <pre class="prettyprint linenums"><code>
 // $って何
 $(function{
     // #って何 click, eって何
@@ -133,10 +137,11 @@ $(function{
     })
 });
                 </code></pre>
+                <p>ちなみにconsole.log(引数)は引数をconsole（ブラウザで実行した場合はブラウザ開発ツールのコンソール）に出力するビルトイン関数です。</p>
                 <br>
                 <li>書き方も色々</li>
-                変数の書き方
-                <pre class="prettyprint"><code>
+                <p>変数の書き方</p>
+                <pre class="prettyprint linenums"><code>
 // varとletの変数のスコープの違い
 function func() {
     // 関数スコープ
@@ -144,14 +149,15 @@ function func() {
     {
       // ブロックスコープ (ES6から使える)
       let y = 2;
+      console.log(x);
       console.log(y);
     }
     console.log(x);
     console.log(y); // 未定義エラー
   }
                 </code></pre>
-                関数の書き方
-                <pre class="prettyprint"><code>
+                <p>関数の書き方</p>
+                <pre class="prettyprint linenums"><code>
 // 関数宣言と関数式の違い
 
 func("test"); // OK
@@ -161,7 +167,7 @@ varFunc("test"); // 未定義エラー(関数式の後にしか実行できな�
 function func(x){
     console.log(x);
 }
-// 関数式
+// 関数式（関数を変数に代入する）
 let varFunc = function(x){
     console.log(x);
 }
@@ -176,9 +182,10 @@ let arrowFunc = (y) => {
             </ul>
 
             <h3 style="font-size: 2em">ということで</h3>
+            <p>一口にフロントエンドJavaScriptと言っても</p>
             <ol>
-                <li>標準の仕様(ECMAScript/JavaScript)の理解</li>
-                <li>ライブラリの理解</li>
+                <li>ECMAScriptの仕様とJavaScriptビルトイン関数の理解</li>
+                <li>JavasScriptライブラリの理解</li>
                 <li>付随するWeb技術(CSS, HTML5, AjaxやWebSocket)の理解</li>
             </ol>
             <p>という本来単純な一つの言語の学習のために色々覚えることがたくさんあります。</p>
@@ -192,15 +199,15 @@ let arrowFunc = (y) => {
             <h2>とりあえず</h2>
             <h3>変数</h3>
             <!-- ソースコード -->
-            <pre class="prettyprint"><code>
+            <pre class="prettyprint linenums"><code>
 var 変数名 = 値;
 
 //例
 var num = 1;
             </code></pre>
+
             <h3>関数</h3>
-            <!-- ソースコード -->
-            <pre class="prettyprint"><code>
+            <pre class="prettyprint linenums"><code>
 function 関数名(引数){
     // 関数の処理
     return 戻り値
@@ -215,6 +222,26 @@ function func(arg){
 };
 ret = func(1);
             </code></pre>
+
+            <h3>WEBでどうやってJavScriptを動かすのか</h3>
+            <pre class="prettyprint linenums"><code>
+// scriptタグのsrc属性で.jsファイルのurlを指定して読み込み
+&lt;script src=&quot;path&#x2f;to&#x2f;file.js&quot;&gt;&lt;&#x2f;script&gt;
+
+or
+
+// HTMLのscriptタグの中に直接記述
+&lt;script&gt;
+    var str = "test";
+    func(str);
+
+    function func(x){
+        console.log(x);
+    }
+&lt;&#x2f;script&gt;
+
+// どちらも読み込まれたタイミングで処理が発火します。
+            </code></pre>
             <p>以上です。</p>
         </section>
 
@@ -223,31 +250,31 @@ ret = func(1);
         <section>
             <h2>Javascriptのビルトイン関数でDOMを操作してみる</h2>
             <p>参考: <a href="https://developer.mozilla.org/ja/docs/Web/API/Document/getElementById" target="_blank">https://developer.mozilla.org/ja/docs/Web/API/Document/getElementById</a></p>
-            <div>html</div>
+            <p>HTML</p>
 
             <!-- ソースコード -->
-            <pre class="prettyprint"><code>
+            <pre class="prettyprint linenums"><code>
 &lt;p id=&quot;para1&quot; style=&quot;font-size:32px&quot;&gt;ここを変える&lt;&#x2f;p&gt;
 &lt;button id=&quot;blueBtn&quot; class=&quot;blue&quot;&gt;blue&lt;&#x2f;button&gt;
 &lt;button id=&quot;redBtn&quot; class=&quot;red&quot;&gt;red&lt;&#x2f;button&gt;
             </code></pre>
 
-            <div>JavaScript</div>
-            <pre class="prettyprint"><code>
+            <p>JavaScript</p>
+            <pre class="prettyprint linenums"><code>
 // ドキュメントロード時に実行
 document.addEventListener('DOMContentLoaded', function() {
     // blueボタンイベント登録
     var blueBtn = document.getElementById("blueBtn")
     blueBtn.addEventListener('click', function(e){
-        changeBuiltin(e.target.className);
+        changeColorWithBuiltinFunc(e.target.className);
     }, false);
     // redボタンイベント登録
     var redBtn = document.getElementById("redBtn")
     redBtn.addEventListener('click', function(e){
-        changeBuiltin(e.target.className);
+        changeColorWithBuiltinFunc(e.target.className);
     }, false);
 });
-function changeBuiltin(newColor) {
+function changeColorWithBuiltinFunc(newColor) {
     // 対象のDOM要素を取得
     var elem = document.getElementById('para1');
     // 要素のテキストを変える（newColorの中はonclickの引数）
@@ -268,15 +295,15 @@ function changeBuiltin(newColor) {
                         // blueボタンイベント登録
                         var blueBtn = document.getElementById("blueBtn")
                         blueBtn.addEventListener('click', function (e) {
-                            changeBuiltin(e.target.className);
+                            changeColorWithBuiltinFunc(e.target.className);
                         }, false);
                         // redボタンイベント登録
                         var redBtn = document.getElementById("redBtn")
                         redBtn.addEventListener('click', function (e) {
-                            changeBuiltin(e.target.className);
+                            changeColorWithBuiltinFunc(e.target.className);
                         }, false);
                     });
-                    function changeBuiltin(newColor) {
+                    function changeColorWithBuiltinFunc(newColor) {
                         // 対象のDOM要素を取得
                         var elem = document.getElementById('para1');
                         // 要素のテキストを変える（newColorの中はonclickの引数）
@@ -301,19 +328,28 @@ function changeBuiltin(newColor) {
                 <li>DOM操作が簡単にできる</li>
                 <p>セレクタ機能</p>
                 <p>jQueryで最も基本的な機能がセレクタです。</p>
-                <pre class="prettyprint"><code>
+                <pre class="prettyprint linenums"><code>
 // $() は ライブラリのjQuery()関数のエイリアス（ショートカット）
 
 // $(”#id")でid属性が"id"の要素を取得
+&lt;button id=&quot;redBtn&quot;&gt;&lt;&#x2f;button&gt;
 var redBtn = $("#redBtn");
 
 // $(”.class")でclass属性が"class"の要素を取得
+&lt;span class=&quot;red&quot;&gt;&lt;&#x2f;span&gt;
+&lt;button class=&quot;red&quot;&gt;&lt;&#x2f;button&gt;
 var redElems = $(".red");
 
 // $(”tag")でタグの種類が"tag"の要素を取得
-var Btns = $("button");
+&lt;button class=&quot;red&quot;&gt;&lt;&#x2f;button&gt;
+&lt;button class=&quot;blue&quot;&gt;&lt;&#x2f;button&gt;
+var buttons = $("button");
 
 // $(”query1 query2")で、query1に該当する要素の子要素の内、query2に該当する要素を取得
+&lt;div id=&quot;jquerySample&quot;&gt;
+    &lt;button&gt;ボタン1&lt;&#x2f;button&gt;
+    &lt;button&gt;ボタン2&lt;&#x2f;button&gt;
+&lt;&#x2f;div&gt;
 var jquerySampleButtons = $("#jquerySample button");
                 </code></pre>
                 <br>
@@ -326,9 +362,9 @@ var jquerySampleButtons = $("#jquerySample button");
 
         <!-- jQueryでDOM操作してみる -->
         <section>
-                <h2>jQueryでDOMを操作してみる</h2>
-            <div>html</div>
-            <pre class="prettyprint"><code>
+            <h2>jQueryでDOMを操作してみる</h2>
+            <p>HTML</p>
+            <pre class="prettyprint linenums"><code>
 // CDNからjQuery読み込み
 &lt;script src=&quot;https:&#x2f;&#x2f;code.jquery.com&#x2f;jquery-3.3.1.min.js&quot;&gt;&lt;&#x2f;script&gt;
 // もしくはローカルファイルにダウンロードして読み込み
@@ -338,16 +374,19 @@ var jquerySampleButtons = $("#jquerySample button");
 &lt;button class=&quot;green&quot;&gt;green&lt;&#x2f;button&gt;
 &lt;button class=&quot;orange&quot;&gt;orange&lt;&#x2f;button&gt;
             </code></pre>
-            <div>JavaScript</div>
-            <pre class="prettyprint"><code>
-// $(function({})) 内に書かれたコードはドキュメントが描画されたタイミングで1度だけ実行される
-$(function(){
+            <p>JavaScript</p>
+            <pre class="prettyprint linenums"><code>
+// ドキュメントが描画されたときに実行される
+$(function () {
+    // id属性が"jquerySample"の要素の子要素の中の、全てのbuttonタグの要素を取得
     var buttons = $("#jquerySample button");
-    buttons.on("click", function(e){
-        changeJquery(e.target.className);
+    // クリックイベントに関数登録
+    buttons.on("click", function (e) {
+        changeColorWithJquery(e.target.className);
     });
 });
-function changeJquery(newColor) {
+
+function changeColorWithJquery(newColor) {
     // DOM要素を取得
     var elem = $('#para2');
     // 要素のテキストを変える（newColorの中はonclickの引数）
@@ -363,20 +402,162 @@ function changeJquery(newColor) {
                 <button class="green">green</button>
                 <button class="orange">orange</button>
                 <script>
+                    // ドキュメントが描画されたときに実行される
                     $(function () {
-                        // ドキュメントが描画されたときに実行される
+                        // id属性が"jquerySample"の要素の子要素の中の、全てのbuttonタグの要素を取得
                         var buttons = $("#jquerySample button");
+                        // クリックイベントに関数登録
                         buttons.on("click", function (e) {
-                            changeJquery(e.target.className);
+                            changeColorWithJquery(e.target.className);
                         });
                     });
-                    function changeJquery(newColor) {
+
+                    function changeColorWithJquery(newColor) {
                         // DOM要素を取得
                         var elem = $('#para2');
                         // 要素のテキストを変える（newColorの中はonclickの引数）
                         elem.text(newColor);
                         // 要素のスタイルを変える
                         elem.css("color", newColor);
+                    }
+                </script>
+            </div>
+        </section>
+
+        <!--  -->
+        <section id="syncSample">
+            <h2>Ajax</h2>
+            <h3>Ajaxとは何か</h3>
+            <ul>
+                <li>Asynchronous JavaScript + XML</li>
+                <p>JavaScriptとXMLを使った非同期通信です。（XMLのところは意識しなくていいです。）</p>
+                <p>ページ遷移を発生させずに、サーバと通信してデータをやりとりする。</p>
+                <br>
+                <li>同期通信と非同期通信</li>
+                <h3>これが同期通信だ</h3>
+                <div>
+                    <form action="result.html" method="GET">
+                        <button type="submit">sync</button>
+                        <div id="syncResult"></div>
+                    </form>
+                </div>
+                <br>
+                <h3>これが非同期通信だ</h3>
+                <div>
+                    <button id="asyncBtn">Async</button>
+                    <div>
+                        <ul id="asyncResult"></ul>
+                    </div>
+                    <script>
+                        $(function () {
+                            $("#asyncBtn").on("click", function () {
+                                getData();
+                            })
+                        });
+                        function getData() {
+                            $.ajax({
+                                type: "get",
+                                url: "data/result.json",
+                                dataType: "json"
+                            }).done(function (data) {
+                                $("#asyncResult").empty();
+                                $("#asyncResult").before("結果")
+                                $(data.result).each(function (index, element) {
+                                    $("<li></li>").appendTo("#asyncResult").text(element)
+                                })
+                            });
+                        }
+                    </script>
+                </div>
+            </ul>
+
+        </section>
+
+        <!-- Ajaxしてみる -->
+        <section>
+            <h2>Ajaxしてみる</h2>
+            <p>HTML</p>
+            <pre class="prettyprint linenums"><code>
+&lt;div id=&quot;ajaxSample&quot;&gt;
+    &lt;p style=&quot;font-size:32px&quot;&gt;天気予報&lt;&#x2f;p&gt;
+    &lt;button data-city=&quot;tokyo&quot;&gt;東京&lt;&#x2f;button&gt;
+    &lt;button data-city=&quot;sapporo&quot;&gt;札幌&lt;&#x2f;button&gt;
+    &lt;div id=&quot;ajaxResult&quot;&gt;&lt;&#x2f;div&gt;
+&lt;&#x2f;div&gt;
+            </code></pre>
+            <p>JavaScript</p>
+            <pre class="prettyprint linenums"><code>
+$(function () {
+    // お決まりのドキュメント描画時のイベント登録
+    $("#ajaxSample button").on("click", function (e) {
+        var cityId = $(e.target).data("city");
+        getWeather(cityId);
+    });
+});
+function getWeather(cityId) {
+    // AjaxでGet
+    $.ajax({
+        type: "get",                        // HTTP メソッド
+        url: "data/" + cityId + ".json",    // URL
+        dataType: "json"                    // 返却されるデータのタイプ
+    }).done(function (data) {
+        // サーバからのレスポンスがきたら処理される
+        $("#ajaxResult").empty();
+        // DOMにデータを追加
+        var ul = $("&lt;ul&gt;&lt;&#x2f;ul&gt;").appendTo("#ajaxResult");
+        $(data.forecasts).each(function (index, element) {
+            let txt = `${element.dateLabel} ${element.telop}`;
+            if (element.temperature.max){
+                txt = txt +` 最高: ${element.temperature.max.celsius}℃`;
+            }
+            if (element.temperature.min){
+                txt = txt +` 最低: ${element.temperature.min.celsius}℃`;
+            }
+            $("&lt;li&gt;&lt;&#x2f;li&gt;").appendTo(ul).text(txt);
+        });
+    });
+}
+            </code></pre>
+
+            <!-- jQuery サンプル-->
+            <div id="ajaxSample">
+                <p style="font-size:32px">天気予報</p>
+                <button data-city="tokyo">東京</button>
+                <button data-city="sapporo">札幌</button>
+                <div id="ajaxResult"></div>
+                <script>
+                    $(function () {
+                        // お決まりのドキュメント描画時のイベント登録
+                        $("#ajaxSample button").on("click", function (e) {
+                            var cityId = $(e.target).data("city");
+                            getWeather(cityId);
+                        });
+                    });
+                    function getWeather(cityId) {
+                        // AjaxでGet
+                        $.ajax({
+                            // HTTP メソッド
+                            type: "get",
+                            // URL
+                            url: "data/" + cityId + ".json",
+                            // 返却されるデータのタイプ
+                            dataType: "json"
+                        }).done(function (data) {
+                            // サーバからのレスポンスがきたら処理される
+                            $("#ajaxResult").empty();
+                            // DOMにデータを追加
+                            var ul = $("<ul></ul>").appendTo("#ajaxResult");
+                            $(data.forecasts).each(function (index, element) {
+                                let txt = `${element.dateLabel} ${element.telop}`;
+                                if (element.temperature.max){
+                                    txt = txt +` 最高: ${element.temperature.max.celsius}℃`;
+                                }
+                                if (element.temperature.min){
+                                    txt = txt +` 最低: ${element.temperature.min.celsius}℃`;
+                                }
+                                $("<li></li>").appendTo(ul).text(txt);
+                            });
+                        });
                     }
                 </script>
             </div>

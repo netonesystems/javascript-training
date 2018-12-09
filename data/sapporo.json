@@ -1,0 +1,118 @@
+{
+    "pinpointLocations": [
+        {
+            "link": "http://weather.livedoor.com/area/forecast/0110000",
+            "name": "\u672d\u5e4c\u5e02"
+        },
+        {
+            "link": "http://weather.livedoor.com/area/forecast/0121700",
+            "name": "\u6c5f\u5225\u5e02"
+        },
+        {
+            "link": "http://weather.livedoor.com/area/forecast/0122400",
+            "name": "\u5343\u6b73\u5e02"
+        },
+        {
+            "link": "http://weather.livedoor.com/area/forecast/0123100",
+            "name": "\u6075\u5ead\u5e02"
+        },
+        {
+            "link": "http://weather.livedoor.com/area/forecast/0123400",
+            "name": "\u5317\u5e83\u5cf6\u5e02"
+        },
+        {
+            "link": "http://weather.livedoor.com/area/forecast/0123500",
+            "name": "\u77f3\u72e9\u5e02"
+        },
+        {
+            "link": "http://weather.livedoor.com/area/forecast/0130300",
+            "name": "\u5f53\u5225\u753a"
+        },
+        {
+            "link": "http://weather.livedoor.com/area/forecast/0130400",
+            "name": "\u65b0\u7be0\u6d25\u6751"
+        }
+    ],
+    "link": "http://weather.livedoor.com/area/forecast/016010",
+    "forecasts": [
+        {
+            "dateLabel": "\u4eca\u65e5",
+            "telop": "\u66c7\u6642\u3005\u96ea",
+            "date": "2018-12-09",
+            "temperature": {
+                "min": null,
+                "max": null
+            },
+            "image": {
+                "width": 50,
+                "url": "http://weather.livedoor.com/img/icon/11.gif",
+                "title": "\u66c7\u6642\u3005\u96ea",
+                "height": 31
+            }
+        },
+        {
+            "dateLabel": "\u660e\u65e5",
+            "telop": "\u66c7\u6642\u3005\u96ea",
+            "date": "2018-12-10",
+            "temperature": {
+                "min": {
+                    "celsius": "-7",
+                    "fahrenheit": "19.4"
+                },
+                "max": {
+                    "celsius": "-2",
+                    "fahrenheit": "28.4"
+                }
+            },
+            "image": {
+                "width": 50,
+                "url": "http://weather.livedoor.com/img/icon/11.gif",
+                "title": "\u66c7\u6642\u3005\u96ea",
+                "height": 31
+            }
+        },
+        {
+            "dateLabel": "\u660e\u5f8c\u65e5",
+            "telop": "\u66c7\u308a",
+            "date": "2018-12-11",
+            "temperature": {
+                "min": null,
+                "max": null
+            },
+            "image": {
+                "width": 50,
+                "url": "http://weather.livedoor.com/img/icon/8.gif",
+                "title": "\u66c7\u308a",
+                "height": 31
+            }
+        }
+    ],
+    "location": {
+        "city": "\u672d\u5e4c",
+        "area": "\u5317\u6d77\u9053",
+        "prefecture": "\u9053\u592e"
+    },
+    "publicTime": "2018-12-09T17:00:00\u002b0900",
+    "copyright": {
+        "provider": [
+            {
+                "link": "http://tenki.jp/",
+                "name": "\u65e5\u672c\u6c17\u8c61\u5354\u4f1a"
+            }
+        ],
+        "link": "http://weather.livedoor.com/",
+        "title": "(C) LINE Corporation",
+        "image": {
+            "width": 118,
+            "link": "http://weather.livedoor.com/",
+            "url": "http://weather.livedoor.com/img/cmn/livedoor.gif",
+            "title": "livedoor \u5929\u6c17\u60c5\u5831",
+            "height": 26
+        }
+    },
+    "title": "\u9053\u592e \u672d\u5e4c \u306e\u5929\u6c17",
+    "description": {
+        "text": " \u5317\u6d77\u9053\u4ed8\u8fd1\u306f\u3001\u5f15\u304d\u7d9a\u304d10\u65e5\u306b\u304b\u3051\u3066\u51ac\u578b\u306e\u6c17\u5727\u914d\u7f6e\u3067\u3001\u6c17\u5727\u306e\u50be\u304d\u304c\n\u5927\u304d\u3044\u3067\u3057\u3087\u3046\u3002\n\n \u77f3\u72e9\u30fb\u7a7a\u77e5\u30fb\u5f8c\u5fd7\u5730\u65b9\u306e9\u65e515\u6642\u306e\u5929\u6c17\u306f\u3001\u304a\u304a\u3080\u306d\u96ea\u3068\u306a\u3063\u3066\u3044\u307e\u3059\n\u3002\n\n 9\u65e5\u591c\u306f\u3001\u77f3\u72e9\u5730\u65b9\u306f\u66c7\u308a\u6642\u3005\u96ea\u3001\u7a7a\u77e5\u5730\u65b9\u3068\u5f8c\u5fd7\u5730\u65b9\u306f\u96ea\u3067\u3057\u3087\u3046\u3002\n\n 10\u65e5\u306f\u3001\u5f15\u304d\u7d9a\u304d\u51ac\u578b\u306e\u6c17\u5727\u914d\u7f6e\u3068\u306a\u308b\u305f\u3081\u3001\u96ea\u306e\u3061\u66c7\u308a\u306e\u898b\u8fbc\u307f\u3067\u3059\n\u3002\n\n \u6d77\u306e\u6ce2\u306e\u9ad8\u3055\u306f\u30019\u65e5\u591c\u306f3\u30e1\u30fc\u30c8\u30eb\u306e\u30614\u30e1\u30fc\u30c8\u30eb\u300110\u65e5\u306f4\u30e1\u30fc\u30c8\n\u30eb\u306e\u30613\u30e1\u30fc\u30c8\u30eb\u3068\u3001\u3068\u3082\u306b\u3057\u3051\u308b\u3067\u3057\u3087\u3046\u3002\n\n\u003c\u5929\u6c17\u5909\u5316\u7b49\u306e\u7559\u610f\u70b9\u003e\n 10\u65e5\u306f\u3001\u663c\u9803\u307e\u3067\u96ea\u304c\u964d\u308a\u3084\u3059\u3044\u3067\u3057\u3087\u3046\u30029\u65e518\u6642\u304b\u308910\u65e518\n\u6642\u307e\u3067\u306e24\u6642\u9593\u964d\u96ea\u91cf\u306f\u3001\u591a\u3044\u6240\u306740\u30bb\u30f3\u30c1\u306e\u898b\u8fbc\u307f\u3067\u3059\u3002",
+        "publicTime": "2018-12-09T16:33:00\u002b0900"
+    }
+}
